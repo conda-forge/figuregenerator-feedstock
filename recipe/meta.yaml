@@ -1,5 +1,5 @@
 {% set name = "FigureGenerator" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/FigureGenerator-{{ version }}.tar.gz
-  sha256: 14c74f76e8c0acfad16e0b7447ed1f5d43344ef22268e04adbb9d4490eda27ba
+  sha256: 52e6436d88fbc550dbc6724e8f3b512fad547cfa6d72bc7d321b966c6302c79b
 
 build:
   number: 0
