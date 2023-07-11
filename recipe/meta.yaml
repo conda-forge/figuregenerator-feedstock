@@ -27,7 +27,7 @@ requirements:
     - psutil
     - pytest
     - python >=3.6
-    - simpleitk >=2.1.0
+    - simpleitk !=2.0.*,!=2.2.1
 
 test:
   imports:
