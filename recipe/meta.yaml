@@ -7,18 +7,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/FigureGenerator-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/FigureGenerator-{{ version }}.tar.gz
   sha256: 96322e6a616d5697bd8ae1ab080d1cb4b3a4bb4720ce6343f576d37b74d1ac4d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
+    - setuptools
   run:
     - black
     - coverage
@@ -26,7 +27,7 @@ requirements:
     - numpy >=1.19.2
     - psutil
     - pytest
-    - python >=3.6
+    - python >={{ python_min }}
     - simpleitk !=2.0.*,!=2.2.1
 
 test:
@@ -34,6 +35,7 @@ test:
     - FigureGenerator
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/FigureGenerator/
